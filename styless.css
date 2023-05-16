@@ -360,8 +360,9 @@ span{
 }
 @media(max-width: 450px){
     .header{
-        padding: 2rem 11%;
-        margin-right: -15%;
+        position: relative;
+        justify-content: space-between;
+        padding-right: 50px;
     }
     html{
         font-size: 50%;
@@ -382,8 +383,9 @@ span{
 }
 @media(max-width: 365px){
     .header{
-        padding: 2rem 11%;
-        margin-right: -15%;
+        position: relative;
+        justify-content: space-between;
+        padding-right: 50px;
     }
     .home-img img{
         width: 30vh;
@@ -411,8 +413,9 @@ span{
 }
 @media(max-width: 350px){
     .header{
-        padding: 2rem 11%;
-        margin-right: -15%;
+        position: relative;
+        justify-content: space-between;
+        padding-right: 50px;
     }
     .home-content{
         text-align: center;
