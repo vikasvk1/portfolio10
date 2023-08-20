@@ -359,10 +359,15 @@ span{
     }
 }
 @media(max-width: 450px){
+    *{
+        overflow-x: hidden;
+    }
+    
     .header{
         position: relative;
         justify-content: space-between;
         padding-right: 50px;
+        overflow: visible;
     }
     html{
         font-size: 50%;
@@ -382,13 +387,16 @@ span{
 
 }
 @media(max-width: 365px){
+    *{
+        overflow-X: hidden;
+    }
     .header{
         position: relative;
         justify-content: space-between;
-        padding-right: 50px;
+        overflow: visible;
     }
     .home-img img{
-        width: 30vh;
+        width: 1px;
     }
     .about-img img{
         width: 30vh;
@@ -396,6 +404,7 @@ span{
     }
     .home-content{
         justify-content: center;
+        overflow-y: hidden;
     }
     .home-content h1{
         font-size: 5.5rem;
@@ -405,6 +414,7 @@ span{
     }
     .footer{
         flex-direction: column-reverse;
+        overflow-y: hidden;
     }
     .footer p{
         text-align: center;
@@ -412,26 +422,34 @@ span{
     }
 }
 @media(max-width: 350px){
+    *{
+        overflow-x: hidden;
+    }
     .header{
         position: relative;
         justify-content: space-between;
         padding-right: 50px;
+        overflow: visible;
     }
     .home-content{
         text-align: center;
     }
     .home-img img{
-        width: 30vh;
+        width: 1px;
     }
     .about-img img{
         width: 30vh;
         text-align: center;
     }
     .home-content h1{
-        font-size: 4rem;
+        font-size: 5rem;
+        overflow-y: hidden;
     }
     .home-content h3{
-        font-size: 1.5rem;
+        font-size: 2.5rem;
+    }
+    .multiple-text{
+        font-size: 2.2rem;
     }
     .footer{
         flex-direction: column-reverse;
@@ -442,21 +460,27 @@ span{
     }
 }
 @media(max-width: 300px){
+    *{
+        overflow-x: hidden;
+    }
     .home-content{
         text-align: center;
     }
     .home-img img{
-        width: 30vh;
+        width: 1px;
     }
     .about-img img{
         width: 30vh;
         text-align: center;
     }
     .home-content h1{
-        font-size: 4rem;
+        font-size: 4.2rem;
     }
     .home-content h3{
-        font-size: 1.5rem;
+        font-size: 3rem;
+    }
+    .multiple-text{
+        font-size: 2rem;
     }
     .footer{
         flex-direction: column-reverse;
@@ -467,21 +491,27 @@ span{
     }
 }
 @media(max-width: 250px){
+    *{
+        overflow-x: hidden;
+    }
     .home-content{
         text-align: center;
     }
     .home-img img{
-        width: 30vh;
+        width: 1px;
     }
     .about-img img{
         width: 30vh;
         text-align: center;
     }
     .home-content h1{
-        font-size: 2rem;
+        font-size: 3rem;
     }
     .home-content h3{
-        font-size: 1rem;
+        font-size: 2rem;
+    }
+    .multiple-text{
+        font-size: 1.5rem;
     }
     .footer{
         flex-direction: column-reverse;
