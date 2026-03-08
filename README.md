@@ -25,6 +25,20 @@ To make the contact form work on `https://vikasvk1.github.io/portfolio10/`:
    `window.CONTACT_API_BASE = "https://your-backend-domain.com";`
 3. Enable CORS on backend if frontend and backend are on different domains.
 
+## Cloudflare Worker option (same repo)
+
+This repo now includes a worker backend at `worker/`.
+
+Quick start:
+
+1. `npm i -g wrangler`
+2. `wrangler login`
+3. `cd worker`
+4. `wrangler secret put BREVO_API_KEY`
+5. `wrangler deploy`
+6. Put the deployed worker URL in `index.html`:
+   `window.CONTACT_API_BASE = "https://your-worker-subdomain.workers.dev";`
+
 ## Brevo setup notes
 
 - In Brevo, go to Settings > SMTP & API and create/get your SMTP credentials.

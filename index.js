@@ -107,7 +107,10 @@ if (contactForm) {
         try {
             const endpoint = resolveContactEndpoint();
             if (!endpoint) {
-                throw new Error('Contact API is not configured for this site yet.');
+                fallbackToMailto(payload);
+                contactForm.reset();
+                showFormStatus('Opened your mail app with pre-filled message.', 'success');
+                return;
             }
 
             const response = await fetch(endpoint, {
@@ -145,4 +148,12 @@ function resolveContactEndpoint() {
         return '';
     }
     return '/api/contact';
+}
+
+function fallbackToMailto(payload) {
+    const subject = encodeURIComponent(`Portfolio Contact - ${payload.name}`);
+    const body = encodeURIComponent(
+        `Name: ${payload.name}\nEmail: ${payload.email}\n\nMessage:\n${payload.message}`
+    );
+    window.location.href = `mailto:vkvikas74@gmail.com?subject=${subject}&body=${body}`;
 }
