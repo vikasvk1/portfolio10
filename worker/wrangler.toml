@@ -1,0 +1,8 @@
+﻿name = "portfolio10-contact-api"
+main = "src/index.js"
+compatibility_date = "2026-03-08"
+
+[vars]
+CLIENT_ORIGIN = "https://vikasvk1.github.io"
+TO_EMAIL = "vkvikas74@gmail.com"
+FROM_EMAIL = "vkvikas74@gmail.com"
