@@ -14,6 +14,17 @@ Modern static portfolio with an internal Node.js contact API.
 5. Open:
    http://localhost:5500
 
+## GitHub Pages note (important)
+
+GitHub Pages hosts only static files, so `/api/contact` will return `405`.
+
+To make the contact form work on `https://vikasvk1.github.io/portfolio10/`:
+
+1. Deploy this backend (`server.js`) on a server platform (Render/Railway/VPS).
+2. Set this value in `index.html` before `index.js`:
+   `window.CONTACT_API_BASE = "https://your-backend-domain.com";`
+3. Enable CORS on backend if frontend and backend are on different domains.
+
 ## Brevo setup notes
 
 - In Brevo, go to Settings > SMTP & API and create/get your SMTP credentials.

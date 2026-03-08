@@ -9,6 +9,7 @@ const contactForm = document.querySelector('#contact-form');
 const formStatus = document.querySelector('#form-status');
 const reveals = document.querySelectorAll('.reveal');
 const counters = document.querySelectorAll('.counter');
+const CONTACT_API_BASE = window.CONTACT_API_BASE || '';
 
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'dark') {
@@ -104,7 +105,12 @@ if (contactForm) {
         showFormStatus('Sending message...', '');
 
         try {
-            const response = await fetch('/api/contact', {
+            const endpoint = resolveContactEndpoint();
+            if (!endpoint) {
+                throw new Error('Contact API is not configured for this site yet.');
+            }
+
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
@@ -129,4 +135,14 @@ function showFormStatus(message, type) {
     formStatus.textContent = message;
     formStatus.classList.remove('success', 'error');
     if (type) formStatus.classList.add(type);
+}
+
+function resolveContactEndpoint() {
+    if (CONTACT_API_BASE) {
+        return `${CONTACT_API_BASE.replace(/\/$/, '')}/api/contact`;
+    }
+    if (window.location.hostname.endsWith('github.io')) {
+        return '';
+    }
+    return '/api/contact';
 }
